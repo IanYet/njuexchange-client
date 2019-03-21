@@ -11,57 +11,11 @@ Page({
         },
         isMailAuth: true,
         studentNumber: '',
-        veriCode: [
-            { value: '', key: '1' },
-            { value: '', key: '1' },
-            { value: '', key: '1' },
-            { value: '', key: '1' },
-            { value: '', key: '1' },
-            { value: '', key: '1' },
-        ],
         isSend: false,
         sendDisabled: false,
+        veriCode: '',
+        veriDisabled: false,
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function(options) {},
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {},
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {},
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {},
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {},
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {},
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {},
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {},
 
     inputStudentNum(e) {
         this.setData({
@@ -72,7 +26,7 @@ Page({
     sendCode(e) {
         if (this.data.studentNumber.trim() === '') {
             this.showTip({
-                type: 'fail',
+                type: 'info',
                 text: '学号不能为空',
             })
 
@@ -86,17 +40,23 @@ Page({
         console.log(`${this.data.studentNumber}@smail.nju.edu.cn`.trim())
 
         setTimeout(() => {
-            this.setData({ sendDisabled: false })
+            this.setData({
+                sendDisabled: false,
+                studentNumber: '',
+                isSend: true,
+            })
             this.showTip({
                 type: 'success',
-                text: '验证码已发送'
+                text: '验证码已发送',
             })
         }, 1000)
     },
 
     showTip(tips) {
+        this.closeTip()
+        
         this.setData({
-            tips: { ...tips, show:true },
+            tips: { ...tips, show: true },
         })
         setTimeout(this.closeTip, 5000)
     },
@@ -105,5 +65,34 @@ Page({
         this.setData({
             tips: { show: false },
         })
+    },
+    inputVeriCode(e) {
+        this.setData({
+            veriCode: e.detail.value,
+        })
+    },
+    verify() {
+        console.log(this.data.veriCode)
+        const code = this.data.veriCode
+
+        if (code.length < 6) {
+            this.showTip({
+                type: 'info',
+                text: '请输入完整的验证码',
+            })
+
+            return
+        }
+
+        this.setData({
+            veriDisabled: true,
+        })
+
+        setTimeout(() => {
+            this.showTip({
+                type: 'success',
+                text: '验证已通过',
+            })
+        }, 1000)
     },
 })
