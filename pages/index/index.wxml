@@ -1,28 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-    <image src="/assets/icon.svg" />
-    <view></view>
-    <view></view>
-    <view></view>
-    <!-- <view class="userinfo">
-        <button
-            wx:if="{{ !hasUserInfo && canIUse }}"
-            open-type="getUserInfo"
-            bindgetuserinfo="getUserInfo"
-        >
-            获取头像昵称
-        </button>
-        <block wx:else>
-            <image
-                bindtap="bindViewTap"
-                class="userinfo-avatar"
-                src="{{ userInfo.avatarUrl }}"
-                mode="cover"
-            ></image>
-            <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
-        </block>
+    <view class="logo">
+        <image class="logo-img" mode="aspectFit" src="/assets/icon.svg"></image>
     </view>
-    <view class="usermotto">
-        <text class="user-motto">{{ motto }}</text>
-    </view> -->
+    <view wx:if="{{isWxAuthed}}">
+        <button class="big yellow" hover-class="hover" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+            微 信 登 录
+        </button>
+    </view>
+    <view wx:elif="{{isStudent}}">
+        <button class="big purple" hover-class="hover">
+            学 生 认 证
+        </button>
+    </view>
 </view>

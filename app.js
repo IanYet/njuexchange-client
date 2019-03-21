@@ -39,6 +39,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isWxAuthed: false,
+    isStudent: false,
   }
 })

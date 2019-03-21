@@ -1,10 +1,49 @@
 /**app.wxss**/
+page{
+    height: 100vh;
+    width: 100vw;
+
+    --purple-linear: linear-gradient(#9559da, #9c75d5);
+    --yellow-linear: linear-gradient(#f8cc6d, #f6d167);
+    --purple-shadow: 0 10px 20px 3px rgba(149,89,218, 0.3);
+    --yellow-shadow: 0 10px 20px 3px rgba(248,204,109, 0.5);
+}
+button::after{
+    border:none;
+}
+
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  justify-content: flex-start;
   box-sizing: border-box;
 } 
+
+button.big{
+    --height: 4rem;
+
+    width: 80vw;
+    height: var(--height);
+
+    border:none;
+    border-radius: calc(var(--height)/2);
+    text-align: center;
+    line-height: var(--height);
+    padding: 0;
+}
+button.yellow{
+    color: rgba(255,255,255,0.8);
+    background: var(--yellow-linear);
+    box-shadow: var(--yellow-shadow);
+}
+button.purple{
+    color: rgba(255,255,255,0.8);
+    background: var(--purple-linear);
+    box-shadow: var(--purple-shadow);
+}
+button.hover{
+    color: #ffffff;
+    box-shadow: none;
+}
