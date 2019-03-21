@@ -3,12 +3,12 @@
     <view class="logo">
         <image class="logo-img" mode="aspectFit" src="/assets/icon.svg"></image>
     </view>
-    <view wx:if="{{!isWxAuthed}}">
-        <button class="big yellow" hover-class="hover" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    <view wx:if="{{!isWxAuthed}}" class="btn-view">
+        <button class="big yellow" hover-class="hover" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
             微 信 登 录
         </button>
     </view>
-    <view wx:elif="{{!isStudent}}">
+    <view wx:elif="{{!isStudent}}" class="btn-view">
         <button class="big purple" hover-class="hover">
             学 生 认 证
         </button>

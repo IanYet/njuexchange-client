@@ -1,7 +1,10 @@
 /**index.wxss**/
 .logo{
     box-sizing: border-box;
-    margin: 10vh 0;
+    margin-bottom: 10vh;
+}
+.btn-view{
+    margin-bottom: 10vh;
 }
 .logo-img{
     width: 100vw;

@@ -1,0 +1,64 @@
+/* pages/studentAuth/studentAuth.wxss */
+button.big{
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    line-height: 3rem;
+}
+.card{
+    width: 90vw;
+    height: auto;
+    margin-top: -20px;
+}
+.tag-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.1rem;
+}
+.tag{
+    line-height: 4rem;
+    flex-grow: 1;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+.tag.left{
+    border-top-left-radius: 20px;
+}
+.tag.right{
+    border-top-right-radius: 20px;
+}
+
+.tag.selected{
+    font-weight: bolder;
+    color: black;
+
+    background-color: #fff;
+}
+
+.content-container{
+    box-sizing: border-box;
+    padding: 20px;
+
+    margin-bottom: 20px;
+}
+.num-input{
+    display: flex;
+    align-items: center;
+    border-radius: 1.5rem;
+
+    margin-bottom: 20px;
+}
+.num-prefix{
+    height: 3rem;
+    flex-shrink: 1;
+
+    padding-left: 0.5rem;
+}
+.num-suffix{
+    height: 3rem;
+    line-height: 3rem;
+    padding-right: 0.5rem;
+}

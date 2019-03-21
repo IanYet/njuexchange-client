@@ -1,22 +1,21 @@
 //index.js
 //获取应用实例
-const {globalData} = getApp()
+const { globalData } = getApp()
 
 Page({
-  data: {},
+    data: {},
 
-  onLaunch: function(){
-      if(globalData.isWxAuthed && globalData.isStudent){
-          
-      }
-  },
+    onLaunch() {
+        if (globalData.isWxAuthed && globalData.isStudent) {
+        }
+    },
 
-  bindGetUserInfo: function(e) {
-    console.log(e)
-    globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
+    getUserInfo(e) {
+        console.log(e)
+        globalData.userInfo = e.detail.userInfo
+        this.setData({
+            userInfo: e.detail.userInfo,
+            hasUserInfo: true,
+        })
+    },
 })

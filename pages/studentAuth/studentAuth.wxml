@@ -1,0 +1,47 @@
+<view class="container">
+    <tips wx:if="{{tips.show}}" tip-type="{{tips.type}}" bindclose="closeTip">{{tips.text}}</tips>
+    <view class="card">
+        <view class="tag-container">
+            <view class="tag {{ isMailAuth ? 'selected' : '' }} left"
+                >校邮验证</view
+            >
+            <view class="tag {{ isMailAuth ? '' : 'selected' }} right"
+                >人工验证</view
+            >
+        </view>
+        <view class="content-container">
+            <block wx:if="{{ isMailAuth }}">
+                <block wx:if="{{ !isSend }}">
+                    <view class="num-input">
+                        <input
+                            focus="{{ true }}"
+                            adjust-position="{{ true }}"
+                            class="num-prefix"
+                            placeholder="请输入学号"
+                            bindinput="inputStudentNum"
+                            value="{{studentNumber}}"
+                        />
+                        <view class="num-suffix">@smail.nju.edu.cn</view>
+                    </view>
+                    <button
+                        class="big purple"
+                        hover-class="hover"
+                        bindtap="sendCode"
+                        disabled="{{sendDisabled}}"
+                    >
+                        发送验证码
+                    </button>
+                </block>
+                <block wx:else>
+                    <input
+                        wx:for="{{ veriCode }}"
+                        wx:key="{{ item.key }}"
+                        value="{{ item.value }}"
+                    />
+                    <button class="big yellow" hover-class="hover">验证</button>
+                </block>
+            </block>
+            <block wx:else>human</block>
+        </view>
+    </view>
+</view>

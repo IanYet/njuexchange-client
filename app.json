@@ -1,9 +1,14 @@
 {
     "pages": [
+        "pages/studentAuth/studentAuth",
         "pages/index/index",
         "pages/shop/shop",
-        "pages/user/user"
+        "pages/user/user",
+        "pages/upload/upload"
     ],
+    "usingComponents": {
+        "tips": "/components/tips/tips"
+    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",

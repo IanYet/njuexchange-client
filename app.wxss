@@ -2,30 +2,26 @@
 page{
     height: 100vh;
     width: 100vw;
+    color: #303132;
 
     --purple-linear: linear-gradient(#9559da, #9c75d5);
     --yellow-linear: linear-gradient(#f8cc6d, #f6d167);
-    --purple-shadow: 0 10px 20px 3px rgba(149,89,218, 0.3);
-    --yellow-shadow: 0 10px 20px 3px rgba(248,204,109, 0.5);
+    --purple-shadow: 0 10px 20px -5px rgba(149,89,218, 0.3);
+    --yellow-shadow: 0 10px 20px -5px rgba(248,204,109, 0.5);
+    --thick-purple: #9559da;
+    --thin-purple: #9c75d5;
+    --thick-yellow: #f8cc6d;
+    --thin-purple: #f6d167;
 }
 button::after{
     border:none;
 }
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-} 
-
 button.big{
     --height: 4rem;
 
     width: 80vw;
     height: var(--height);
+    font-size: 1.1rem;
 
     border:none;
     border-radius: calc(var(--height)/2);
@@ -46,4 +42,28 @@ button.purple{
 button.hover{
     color: #ffffff;
     box-shadow: none;
+}
+button.purple.hover{
+    background-color: var(--thick-purple);
+}
+button.yellow.hover{
+    background-color: var(--thick-yellow);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+} 
+.card {
+    border-radius: 20px;
+    box-shadow: 0 10px 40px -10px rgba(0,64,128,0.2);
+    margin: 20px;
+}
+.card.small{
+    margin: 10px;
+    border-radius: 10px;
 }
