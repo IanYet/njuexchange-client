@@ -98,7 +98,7 @@ Page({
         this.setData({
             tips: { ...tips, show:true },
         })
-        setTimeout(this.closeTip, 3000)
+        setTimeout(this.closeTip, 5000)
     },
 
     closeTip(e) {
