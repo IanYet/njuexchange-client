@@ -1,10 +1,10 @@
 <!--components/tips.wxml-->
-<view class="tips">
+<view class="tips {{isShow?'':'prev'}}">
     <view class="content">
         <icon wx:if="{{tipType === 'success'}}" type="success" color="rgb(113,191,75)" size="18px" class="icon"/>
         <icon wx:if="{{tipType === 'fail'}}" type="warn" color="rgb(214,54,57)" size="18px" class="icon"/>
         <icon wx:if="{{tipType === 'info'}}" type="info" color="rgb(233,151,59)" size="18px" class="icon"/>
-        <text class="text"><slot></slot></text>
+        <view class="text"><slot></slot></view>
     </view>
     <view class="close" bindtap="handleTap">关闭</view>
 </view>

@@ -7,11 +7,19 @@ Component({
         tipType: String
     },
 
+    lifetimes: {
+        ready() {
+            this.setData({
+                isShow: true
+            })
+        }
+    },
+
     /**
      * 组件的初始数据
      */
     data: {
-
+        isShow: false
     },
 
     /**

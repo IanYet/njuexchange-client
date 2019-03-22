@@ -17,6 +17,13 @@ Page({
         veriDisabled: false,
     },
 
+    toggleMailAuth(e) {
+        this.setData({isMailAuth: true})
+    },
+    toggleArtiAuth(e) {
+        this.setData({isMailAuth: false})
+    },
+
     inputStudentNum(e) {
         this.setData({
             studentNumber: e.detail.value,

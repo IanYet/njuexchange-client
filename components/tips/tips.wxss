@@ -4,16 +4,24 @@
     position: fixed;
     top:20px;
     left: 20px;
+    background: #f8f9fa;
+
+    z-index: 999;
 
     width: calc(100vw - 40px);
     height: auto;
     min-height: 4rem;
 
     border-radius: 20px;
-    box-shadow: 0 0 40px -10px rgba(0,64,128,0.2);
+    box-shadow: 0 10px 40px -10px rgba(0,64,128,0.2);
 
     display: flex;
     align-items: center;
+
+    transition: all 300ms ease-in;
+}
+.tips.prev{
+    top: -6rem;
 }
 .content{
     max-width: calc(100vw - 40px - 4rem);

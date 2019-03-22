@@ -59,9 +59,11 @@ button.yellow.hover{
     box-sizing: border-box;
 } 
 .card {
+    box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 0 10px 40px -10px rgba(0,64,128,0.2);
-    margin: 20px;
+    margin: 10px 20px;
+    padding: 20px;
 }
 .card.small{
     margin: 10px;

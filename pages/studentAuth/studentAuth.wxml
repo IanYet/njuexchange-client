@@ -1,61 +1,90 @@
 <view class="container">
+    <view class="card">
+        <view class="tag-container" catchtap="toggleMailAuth">
+            <view class="tag {{ isMailAuth ? 'selected' : '' }}">校邮验证</view>
+            <image
+                class="arrow {{ isMailAuth ? 'selected' : '' }}"
+                mode="aspectFit"
+                src="/assets/circle-right.svg"
+            ></image>
+        </view>
+        <view class="content-container {{ isMailAuth ? 'selected' : '' }}">
+            <block wx:if="{{ !isSend }}">
+                <view class="num-input">
+                    <input
+                        focus="{{ true }}"
+                        class="num-prefix"
+                        placeholder="请输入学号"
+                        bindinput="inputStudentNum"
+                        value="{{ studentNumber }}"
+                    />
+                    <view class="num-suffix">@smail.nju.edu.cn</view>
+                </view>
+                <button
+                    class="big purple"
+                    hover-class="hover"
+                    bindtap="sendCode"
+                    disabled="{{ sendDisabled }}"
+                >
+                    发送验证码
+                </button>
+            </block>
+            <block wx:else>
+                <input
+                    focus="{{ true }}"
+                    placeholder="请输入验证码"
+                    maxlength="6"
+                    bindinput="inputVeriCode"
+                    value="{{ veriCode }}"
+                    class="veri-input"
+                />
+                <button
+                    class="big yellow"
+                    hover-class="hover"
+                    bindtap="verify"
+                    disabled="{{ veriDisabled }}"
+                >
+                    验证
+                </button>
+            </block>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="tag-container" catchtap="toggleArtiAuth">
+            <view class="tag {{ !isMailAuth ? 'selected' : '' }}" >人工验证</view>
+            <image
+            class="arrow {{ !isMailAuth ? 'selected' : '' }}"
+                mode="aspectFit"
+                src="/assets/circle-right.svg"
+            ></image>
+        </view>
+        <view class="content-container arti {{ !isMailAuth ? 'selected' : '' }}">
+            <view class="intro">公众号发送校园卡正反照片（可打码）与学号（包含字母），审核通过后会在公众号里给你发送邀请码</view>
+            <input
+                focus="{{ true }}"
+                placeholder="请输入验证码"
+                maxlength="6"
+                bindinput="inputVeriCode"
+                value="{{ veriCode }}"
+                class="veri-input"
+            />
+            <button
+                class="big yellow"
+                hover-class="hover"
+                bindtap="verify"
+                disabled="{{ veriDisabled }}"
+            >
+                验证
+            </button>
+                        
+        </view>
+    </view>
+
     <tips
         wx:if="{{ tips.show }}"
         tip-type="{{ tips.type }}"
         bindclose="closeTip"
         >{{ tips.text }}</tips
     >
-    <view class="card">
-        <view class="tag-container">
-            <view class="tag {{ isMailAuth ? 'selected' : '' }} left"
-                >校邮验证</view
-            >
-            <view class="tag {{ isMailAuth ? '' : 'selected' }} right"
-                >人工验证</view
-            >
-        </view>
-        <view class="content-container">
-            <block wx:if="{{ isMailAuth }}">
-                <block wx:if="{{ !isSend }}">
-                    <view class="num-input">
-                        <input
-                            focus="{{ true }}"
-                            class="num-prefix"
-                            placeholder="请输入学号"
-                            bindinput="inputStudentNum"
-                            value="{{ studentNumber }}"
-                        />
-                        <view class="num-suffix">@smail.nju.edu.cn</view>
-                    </view>
-                    <button
-                        class="big purple"
-                        hover-class="hover"
-                        bindtap="sendCode"
-                        disabled="{{ sendDisabled }}"
-                    >
-                        发送验证码
-                    </button>
-                </block>
-                <block wx:else>
-                    <input
-                        focus="{{ true }}"
-                        placeholder="请输入验证码"
-                        maxlength="6"
-                        bindinput="inputVeriCode"
-                        value="{{ veriCode }}"
-                        class="veri-input"
-                    />
-                    <button
-                        class="big yellow"
-                        hover-class="hover"
-                        bindtap="verify"
-                        disabled="{{ veriDisabled }}"
-                    >
-                        验证
-                    </button>
-                </block>
-            </block>
-            <block wx:else>human</block>
-        </view>
-    </view>
 </view>

@@ -1,10 +1,10 @@
 {
     "pages": [
-        "pages/studentAuth/studentAuth",
         "pages/index/index",
         "pages/shop/shop",
         "pages/user/user",
-        "pages/upload/upload"
+        "pages/upload/upload",
+        "pages/studentAuth/studentAuth"
     ],
     "usingComponents": {
         "tips": "/components/tips/tips"
@@ -12,7 +12,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "南大云易",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

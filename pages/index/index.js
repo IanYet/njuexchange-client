@@ -3,19 +3,33 @@
 const { globalData } = getApp()
 
 Page({
-    data: {},
+    data: {
+        isWxAuthed: false,
+        isStudent: false,
+        showButton: false,
+    },
 
-    onLaunch() {
+    onLoad() {
         if (globalData.isWxAuthed && globalData.isStudent) {
+            console.log('to shop');
+            wx.switchTab({
+                url: '/pages/shop/shop'
+            })
         }
+    },
+
+    onReady() {
+        this.setData({
+            isWxAuthed: globalData.isWxAuthed,
+            isStudent: globalData.isStudent,
+            showButton: globalData.showButton,
+        })
     },
 
     getUserInfo(e) {
         console.log(e)
-        globalData.userInfo = e.detail.userInfo
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true,
-        })
+        if(e.detail.userInfo){
+            globalData.isWxAuthed = true
+        }
     },
 })
