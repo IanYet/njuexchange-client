@@ -17,6 +17,7 @@
                         placeholder="请输入学号"
                         bindinput="inputStudentNum"
                         value="{{ studentNumber }}"
+                        adjust-position="{{false}}"
                     />
                     <view class="num-suffix">@smail.nju.edu.cn</view>
                 </view>
@@ -37,6 +38,7 @@
                     bindinput="inputVeriCode"
                     value="{{ veriCode }}"
                     class="veri-input"
+                    adjust-position="{{false}}"
                 />
                 <button
                     class="big yellow"
