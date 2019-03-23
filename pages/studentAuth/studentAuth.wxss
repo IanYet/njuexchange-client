@@ -31,6 +31,7 @@ button.big{
 .tag{
     line-height: 4rem;
     background-color: #fff;
+    color: #555;
 }
 
 .tag.selected{

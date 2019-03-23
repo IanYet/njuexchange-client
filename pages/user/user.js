@@ -1,4 +1,6 @@
 // pages/user/user.js
+const { globalData } = getApp()
+
 Page({
 
     /**
@@ -60,7 +62,5 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
-
-    }
+    onShareAppMessage: globalData.share,
 })

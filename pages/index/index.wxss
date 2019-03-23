@@ -6,6 +6,10 @@
 .btn-view{
     margin-bottom: 10vh;
 }
+.vir-btn{
+    height: 4rem;
+    opacity: 0;
+}
 .logo-img{
     width: 100vw;
 }

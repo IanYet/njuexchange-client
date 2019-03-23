@@ -100,6 +100,9 @@ Page({
                 type: 'success',
                 text: '验证已通过',
             })
+
+            setTimeout(() => wx.switchTab({ url: '/pages/shop/shop' }), 1000)
+            
         }, 1000)
     },
 })
