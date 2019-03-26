@@ -1,8 +1,9 @@
 {
     "pages": [
-        "pages/index/index",
-        "pages/shop/shop",
         "pages/user/user",
+        "pages/shop/shop",
+        
+        "pages/index/index",
         "pages/upload/upload",
         "pages/studentAuth/studentAuth"
     ],
