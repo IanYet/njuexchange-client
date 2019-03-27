@@ -12,13 +12,14 @@
             <block wx:if="{{ !isSend }}">
                 <view class="num-input">
                     <input
-                        focus="{{ true }}"
+                        wx:if="{{ isMailAuth }}"
+                        
                         class="num-prefix"
                         placeholder="请输入学号"
                         bindinput="inputStudentNum"
                         value="{{ studentNumber }}"
-                        adjust-position="{{false}}"
                     />
+                    <view class="num-prefix" wx:else></view>
                     <view class="num-suffix">@smail.nju.edu.cn</view>
                 </view>
                 <button
@@ -32,14 +33,15 @@
             </block>
             <block wx:else>
                 <input
-                    focus="{{ true }}"
+                    wx:if="{{ isMailAuth }}"
+                    
                     placeholder="请输入验证码"
                     maxlength="6"
                     bindinput="inputVeriCode"
                     value="{{ veriCode }}"
                     class="veri-input"
-                    adjust-position="{{false}}"
                 />
+                <view class="veri-input" wx:else></view>
                 <button
                     class="big yellow"
                     hover-class="hover"
@@ -54,23 +56,31 @@
 
     <view class="card">
         <view class="tag-container" catchtap="toggleArtiAuth">
-            <view class="tag {{ !isMailAuth ? 'selected' : '' }}" >人工验证</view>
+            <view class="tag {{ !isMailAuth ? 'selected' : '' }}"
+                >人工验证</view
+            >
             <image
-            class="arrow {{ !isMailAuth ? 'selected' : '' }}"
+                class="arrow {{ !isMailAuth ? 'selected' : '' }}"
                 mode="aspectFit"
                 src="/assets/circle-right.svg"
             ></image>
         </view>
-        <view class="content-container arti {{ !isMailAuth ? 'selected' : '' }}">
-            <view class="intro">公众号发送校园卡正反照片（可打码）与学号（包含字母），审核通过后会在公众号里给你发送邀请码</view>
+        <view
+            class="content-container arti {{ !isMailAuth ? 'selected' : '' }}"
+        >
+            <view class="intro"
+                >公众号发送校园卡正反照片（可打码）与学号（包含字母），审核通过后会在公众号里给你发送邀请码</view
+            >
             <input
-                focus="{{ true }}"
+                wx:if="{{ !isMailAuth }}"
+                
                 placeholder="请输入验证码"
                 maxlength="6"
                 bindinput="inputVeriCode"
                 value="{{ veriCode }}"
                 class="veri-input"
             />
+            <view class="veri-input" wx:else></view>
             <button
                 class="big yellow"
                 hover-class="hover"
@@ -79,7 +89,6 @@
             >
                 验证
             </button>
-                        
         </view>
     </view>
 

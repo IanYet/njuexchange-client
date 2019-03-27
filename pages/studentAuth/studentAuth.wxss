@@ -62,6 +62,7 @@ button.big{
 .num-prefix{
     height: 4rem;
     flex-shrink: 1;
+    flex-grow: 1;
 
     padding-left: 0.5rem;
 }
