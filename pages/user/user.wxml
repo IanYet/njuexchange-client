@@ -16,21 +16,20 @@
         ></image>
     </view>
     <scroll-view class="content-container">
-        <view>
+        <view class="title-container">
             <view class="title">我关注的</view>
+            <view>3</view>
         </view>
-        <view></view>
-        <view>
-            <view class="title">我正在卖</view>
+        <view class="good-container"></view>
+        <view class="title-container">
+            <view class="title">我在售的</view>
+            <view>3</view>
         </view>
-        <view></view>
-        <view>
-            <view class="title">我卖出的</view>
+        <view class="good-container"></view>
+        <view class="title-container">
+            <view class="title">我售出的</view>
+            <view>3</view>
         </view>
-        <view></view>
-        <view>
-            <view class="title">我买到的</view>
-        </view>
-        <view></view>
+        <view class="good-container"></view>
     </scroll-view>
 </view>

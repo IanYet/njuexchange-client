@@ -12,6 +12,7 @@ page{
     --thin-purple: #9c75d5;
     --thick-yellow: #f8cc6d;
     --thin-purple: #f6d167;
+    --light-gray: #f2f3f5;
 }
 button::after{
     border:none;

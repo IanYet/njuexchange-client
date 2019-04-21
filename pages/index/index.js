@@ -23,14 +23,14 @@ Page({
                 console.log(`login:${res.code}`)
                 //验证学生身份
                 setTimeout(() => {
-                    console.log('student not authed')
+                    console.log('student authed')
                     this.setData(
                         {
-                            isStudent: false,
+                            isStudent: true,
                             getStInfo: true,
                         },
                         () => {
-                            globalData.isStudent = false
+                            globalData.isStudent = true
 
                             if (this.data.isStudent && this.data.isWxAuthed) {
                                 this.toPage()

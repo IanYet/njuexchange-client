@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/user/user",
-        "pages/shop/shop",
         
         "pages/index/index",
+        "pages/user/user",
+        "pages/shop/shop",
         "pages/upload/upload",
         "pages/studentAuth/studentAuth"
     ],
@@ -35,5 +35,6 @@
                 "selectedIconPath": "/assets/user-s.jpg"
             }
         ]
-    }
+    },
+    "sitemapLocation": "sitemap.json"
 }

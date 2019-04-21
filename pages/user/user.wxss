@@ -16,7 +16,7 @@ page{
     width: var(--length);
     border-radius: calc( var(--length) / 2);
 
-    border: 1px solid #000;
+    border: 1px solid var(--light-gray);
 
     overflow: hidden;
 }
@@ -49,6 +49,26 @@ page{
 .content-container{
     flex-grow: 1;
     box-sizing: border-box;
-    padding: 0 10px;
-    width: 100vw;
+    padding: 0 20px;
+    width: 100vw;   
+    margin: 20px 0;
+}
+
+.title-container{
+    box-sizing: border-box;
+    height: 4rem;
+    border-top: 1px solid var(--light-gray);
+
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-container:nth-last-child(2){
+    border-bottom: 1px solid var(--light-gray);
+
+}
+.spread .title-container{
+    border-bottom: 1px solid var(--light-gray);
 }
