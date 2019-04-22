@@ -1,2 +1,16 @@
-<!--pages/shop.wxml-->
-<text>pages/shop.wxml</text>
+<view class="container">
+    <view class="header">
+        <view class="tab-title {{isBuy?'selected':''}}" data-title="buy" bindtap="toggleTab">求物</view>
+        <view class="tab-title {{!isBuy?'selected':''}}" data-title="sell" bindtap="toggleTab">卖物</view>
+        <view class="space-holder">
+            <view></view>
+            <view></view>
+        </view>
+        <image
+            src="/assets/search.svg"
+            mode="aspectFit"
+            class="search"
+        ></image>
+    </view>
+    <view class="content"></view>
+</view>

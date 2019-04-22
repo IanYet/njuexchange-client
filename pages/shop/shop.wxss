@@ -1,1 +1,34 @@
 /* pages/shop.wxss */
+.header{
+    margin: 0 20px;
+    margin-bottom: 20px;
+    width: calc( 100vw - 40px);
+
+    display: flex;
+    align-items: center;
+    height: 2rem;
+}
+.space-holder{
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 1rem;
+}
+.search{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.tab-title{
+    color: var(--light-font);
+    font-weight: bolder;
+    margin-right: 1rem;
+
+    transition: all 100ms linear;
+}
+.tab-title.selected{
+    font-size: 1.6rem;
+    color: var(--normal-font);
+}
+.content{
+    flex-grow: 1;
+    flex-shrink: 1;
+}

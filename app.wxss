@@ -13,6 +13,8 @@ page{
     --thick-yellow: #f8cc6d;
     --thin-purple: #f6d167;
     --light-gray: #f2f3f5;
+    --light-font: #898b8c;
+    --normal-font: #303132;
 }
 button::after{
     border:none;
